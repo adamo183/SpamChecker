@@ -1,6 +1,9 @@
 from fastapi import FastAPI, Response, status
+import machine_learning.spam_checker
+
 
 app = FastAPI()
+
 
 @app.post("/email/spam/check", status_code=200)
 async def check_is_email_spam(data_to_check: str, response: Response):
